@@ -1,0 +1,34 @@
+*{
+    background-color: black;
+}
+
+.header{
+    height: 100px;
+    width: 100%;
+}
+
+.header img{
+    height: 100%;
+    width: auto;
+    margin-left: -5px;
+    margin-top: -15px;
+}
+
+@media only screen and (max-width: 425px) {
+    #BigScreen_Logo{
+        display: none;
+    }
+
+    #Mobile_Logo{
+        width: 80px;
+        height: 75px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    #Mobile_Logo{
+        display: none;
+    }
+}
