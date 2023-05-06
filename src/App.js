@@ -1,30 +1,74 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages';
-import About from './pages/about';
-import Events from './pages/events';
-import AnnualReport from './pages/annual';
-import Teams from './pages/team';
-import Blogs from './pages/blogs';
-import SignUp from './pages/signup';
+import React from "react";
+import Navbar from "./components/Navbar";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
-return (
-	<Router>
-	<Navbar />
-	<Routes>
-		<Route path='/' exact component={Home} />
-		<Route path='/about' component={About} />
-		<Route path='/events' component={Events} />
-		<Route path='/annual' component={AnnualReport} />
-		<Route path='/team' component={Teams} />
-		<Route path='/blogs' component={Blogs} />
-		<Route path='/sign-up' component={SignUp} />
-	</Routes>
-	</Router>
-);
-}
+const Home = () => {
+  return (
+    <>
+      <Navbar />
+      <section className="hero-section">
+        <h1>Home Page</h1>
+      </section>
+    </>
+  );
+};
+
+const Search = () => {
+  return (
+    <>
+      <Navbar />
+      <section className="hero-section">
+        <p>Welcome to </p>
+        <h1>Search Page</h1>
+      </section>
+    </>
+  );
+};
+
+const Libraray = () => {
+  return (
+    <>
+      <Navbar />
+      <section className="hero-section">
+        <p>Welcome to </p>
+        <h1>Libraray</h1>
+      </section>
+    </>
+  );
+};
+
+const Play = () => {
+  return (
+    <>
+      <Navbar />
+      <section className="hero-section">
+        <p>Welcome to </p>
+        <h1>Play</h1>
+      </section>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+
+      <Route path="/Search">
+        <Search />
+      </Route>
+
+      <Route path="/Libraray">
+        <Libraray />
+      </Route>
+
+      <Route path="/Play">
+        <Play />
+      </Route>
+</Switch>
+  );
+};
 
 export default App;
